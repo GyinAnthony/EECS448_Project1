@@ -18,6 +18,7 @@ const mapToGrid = (board) => {
     board.forEach((row, index1) => {
         row.forEach((cell, index2) => {
             gameGrid.children[0].children[index1].children[index2].innerHTML = cell;
+
         })
     })
 }
