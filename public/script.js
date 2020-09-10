@@ -152,7 +152,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 })
 
-
 //Function display the state 
 //Might messed up the index cause j and i are flipped haha thanks Issac!
 const displayboard = (statebackboard,ID) =>
