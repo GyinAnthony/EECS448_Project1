@@ -4,14 +4,14 @@ import Space from "./space.js"
 // Isaac: I marked the indices with x and y to make it clearer
 // X's go from left to right
 // Y's go from top to bottom 
-// Coordinate i,j in backboard is opposite of what is currently displayed 
+// Coordinate not exactly what you think it is. To go South of board from top right you need to do +x and to go north -x and same for y +y to go right and -y to go left. 
 function newBoard() 
 {
     let board = []
     for(let y=0; y<9; y++){
         let row = []
         for(let x=0; x<9; x++){
-            let space = new Space(x, y);
+            let space = new Space(y, x);
             row.push(space)
         }
         board.push(row)
@@ -34,7 +34,7 @@ const mapToGrid = (board, boardId) => {
     for(let i=0; i<9; i++){
         for(let j=0; j<9; j++){
             console.log(board[i][j].state)
-            gameGrid.children[0].children[i].children[j].innerHTML = board[i][j].coordinate.x+", " + board[i][j].coordinate.y;
+            gameGrid.children[0].children[i].children[j].innerHTML = board[i][j].coordinate.x+", " + board[i][j].coordinate.y + " (" + i + ","+ j + ")";
         }
     }
 }
