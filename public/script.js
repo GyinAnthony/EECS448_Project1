@@ -26,6 +26,7 @@ let player2Board = newBoard();
 
 
 
+
 // Takes a Player's board representation and maps the values
 // onto the HTML Table
 const mapToGrid = (board, boardId) => {
@@ -151,7 +152,6 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("start").addEventListener("click", startGame)
 
 })
-
 
 //Function display the state 
 //Might messed up the index cause j and i are flipped haha thanks Issac!
