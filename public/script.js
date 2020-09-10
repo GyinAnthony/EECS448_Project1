@@ -4,12 +4,13 @@ import Space from "./space.js"
 // Isaac: I marked the indices with x and y to make it clearer
 // X's go from left to right
 // Y's go from top to bottom 
-
-const newBoard = () => {
+// Coordinate i,j in backboard is opposite of what is currently displayed 
+function newBoard() 
+{
     let board = []
-    for(let y=1; y<10; y++){
+    for(let y=0; y<9; y++){
         let row = []
-        for(let x=1; x<10; x++){
+        for(let x=0; x<9; x++){
             let space = new Space(x, y);
             row.push(space)
         }
@@ -19,8 +20,10 @@ const newBoard = () => {
     return board
 }
 
-const player1Board = newBoard();
-const player2Board = newBoard();
+let player1Board = newBoard();
+let player2Board = newBoard();
+
+
 
 
 // Takes a Player's board representation and maps the values
@@ -63,6 +66,8 @@ const execOnGrid = (boardId, fn) => {
 const startGame = () => {
     console.log("Starting Game");
     mapToGrid(player1Board, "#game-grid-1");
+    player1Board[0][1].state = "Ship";
+    console.log(player1Board[0][1].state);
     mapToGrid(player2Board, "#game-grid-2");
     displayboard(player1Board,"#game-grid-1");
 }
@@ -147,6 +152,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 })
 
+
 //Function display the state 
 //Might messed up the index cause j and i are flipped haha thanks Issac!
 const displayboard = (statebackboard,ID) =>
@@ -161,29 +167,18 @@ const displayboard = (statebackboard,ID) =>
             {
                 gameboard1.rows[j].cells[i].innerHTML = "Ship";
             }
-            else if (statebackboard[j][i].state == "Empty")
+            if (statebackboard[j][i].state == "Empty")
             {
                 gameboard1.rows[j].cells[i].innerHTML = "~";
             }
-            else if (statebackboard[j][i].state == "Miss")
+            if (statebackboard[j][i].state == "Miss")
             {
                 gameboard1.rows[j].cells[i].innerHTML = "X";
             }
-            else if (statebackboard[j][i].state == "Hit")
+            if (statebackboard[j][i].state == "Hit")
             {
                 gameboard1.rows[j].cells[i].style.backgroundColor = "red"; 
             }
         }
     }
 }
-
-
-
-
-  
-
-
-
-
-
-
