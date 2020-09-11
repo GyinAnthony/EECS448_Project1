@@ -276,7 +276,7 @@ const displayboard = (statebackboard, ID) => {
             if (statebackboard[j][i].state == "Empty") {
                 gameboard1.rows[j].cells[i].innerHTML = "<img src='image/Waterforbattleship.jpg'  alt='water'/>";
             }
-            if (statebackboard[j][i].state == "miss") {
+            if (statebackboard[j][i].state == "Miss") {
                 gameboard1.rows[j].cells[i].innerHTML = "<img src='image/Miss.jpg'  alt='miss water splash'/>";;
             }
             if (statebackboard[j][i].state == "Hit") {
