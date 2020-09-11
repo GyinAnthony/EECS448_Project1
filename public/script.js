@@ -153,12 +153,7 @@ const player2Hit = (x, y) => {
     }
 }
 
-const player1Board = newBoard();
-const player2Board = newBoard();
-const player1OppBoard = newBoard();
-const player2OppBoard = newBoard();
 
-let numberOfShips = 0;
 
 const showPlayerBoard = (board, gridId, opponentBoard, opponentId) => {
     confirm("Switch Players");
