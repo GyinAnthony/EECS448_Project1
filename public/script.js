@@ -123,23 +123,6 @@ const player1Hit = (x, y) => {
     if (player2Board[y][x].state === "Ship") {
         alert("HIT!!!!!");
         player1OppBoard[y][x].state = "Hit";
-        player1Ships.hit(y, x);
-        displayboard(player1OppBoard, "#game-grid-2");
-    } else {
-        alert("MISS");
-        player1OppBoard[y][x].state = "Miss";
-        currentPhase = "p2-turn";
-        displayboard(player1OppBoard, "#game-grid-2");
-        alert("Switch Players!");
-        displayboard(player2Board, "#game-grid-2");
-        displayboard(player2OppBoard, "#game-grid-1");
-    }
-}
-
-const player2Hit = (x, y) => {
-    if (player1Board[y][x].state === "Ship") {
-        alert("HIT!!!!!");
-        player2OppBoard[y][x].state = "Hit";
         player2Ships.hit(y, x);
         displayboard(player2OppBoard, "#game-grid-1");
     } else {
