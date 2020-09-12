@@ -442,3 +442,4 @@ const checkBounds = (ship, board) => {
     }
     return true
 }
+}
